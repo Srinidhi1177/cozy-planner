@@ -131,7 +131,7 @@ async function loadTasks() {
     const li = document.createElement("li");
     li.innerHTML = `
       <label class="cb-wrap">
-        <input type="checkbox" onchange="completeTask(${t.id})">
+        <input type="checkbox" onchange="completeTask('${t.id}')">
         <span class="cb-box"></span>
       </label>
       <div class="task-content">
@@ -141,7 +141,7 @@ async function loadTasks() {
       <div class="coffee" title="Priority: ${level}">
         <div class="coffee-fill ${level}"></div>
       </div>
-      <button class="delete-btn" onclick="deleteTask(${t.id})" title="Delete">✖</button>
+      <button class="delete-btn" onclick="deleteTask('${t.id}')" title="Delete">✖</button>
     `;
     list.appendChild(li);
   });
@@ -157,7 +157,7 @@ async function loadTasks() {
     div.innerHTML = `
       <span class="history-check">✔</span>
       <span class="history-task">${t.task}</span>
-      <button class="delete-btn" onclick="deleteTask(${t.id})" title="Remove">✖</button>
+      <button class="delete-btn" onclick="deleteTask('${t.id}')" title="Remove">✖</button>
     `;
     history.appendChild(div);
   });

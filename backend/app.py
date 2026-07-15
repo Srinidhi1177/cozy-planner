@@ -11,7 +11,7 @@ MONGODB_URI = os.environ.get("MONGODB_URI")
 
 # ─── DB CONNECTION ───────────────────────────────────────────
 client = MongoClient(MONGODB_URI)
-db = client.get_default_database()  # uses the db name in your connection string, e.g. "cozytasks"
+db = client["cozytasks"]  # explicit database name, works regardless of what's in the URI
 
 users_col = db["users"]
 tasks_col = db["tasks"]
